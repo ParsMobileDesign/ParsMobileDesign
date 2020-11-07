@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParsMobileDesign", "ParsMobileDesign\ParsMobileDesign.csproj", "{EF0C67D9-313E-47F4-B28F-4CAB6DA0BB61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF0C67D9-313E-47F4-B28F-4CAB6DA0BB61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF0C67D9-313E-47F4-B28F-4CAB6DA0BB61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF0C67D9-313E-47F4-B28F-4CAB6DA0BB61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF0C67D9-313E-47F4-B28F-4CAB6DA0BB61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88E73820-6CD1-4BEE-86DB-78FE04363B1D}
+	EndGlobalSection
+EndGlobal

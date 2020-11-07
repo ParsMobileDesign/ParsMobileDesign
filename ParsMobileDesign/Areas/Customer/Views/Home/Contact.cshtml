@@ -1,0 +1,83 @@
+﻿@model VmContactMessage
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="more-contact">
+    <div class="main-narrow-content">
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="main-section-heading-feature main-section-heading-feature-sm  " data-animate-effect="fadeInLeft">
+                    <div class="main-section-heading-icon">
+                        <i class="icon-globe"></i>
+                    </div>
+                    <div class="main-section-heading-text">
+                        <p><a href="#">@Model.CompanyInfo.Email</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="main-section-heading-feature main-section-heading-feature-sm  " data-animate-effect="fadeInLeft">
+                    <div class="main-section-heading-icon">
+                        <i class="icon-map"></i>
+                    </div>
+                    <div class="main-section-heading-text">
+                        <p>@Model.CompanyInfo.Address</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="main-section-heading-feature main-section-heading-feature-sm  " data-animate-effect="fadeInLeft">
+                    <div class="main-section-heading-icon">
+                        <i class="icon-phone"></i>
+                    </div>
+                    <div class="main-section-heading-text">
+                        <p><a href="tel://">@Model.CompanyInfo.Tel</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-narrow-content  " data-animate-effect="fadeInLeft">
+    @if (Model.msg != null && Model.msg != "")
+    {
+        <div class="row">
+            <div class="alert alert-warning" role="alert">
+                @Model.msg
+            </div>
+        </div>
+    }
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Get In Touch</h2>
+        </div>
+    </div>
+    <form asp-action="SendMessage">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" asp-for="Message.Name" class="form-control" placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" asp-for="Message.Email" class="form-control" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <textarea asp-for="Message.MessageText" cols="30" rows="7" class="form-control" placeholder="Your message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-md" value="Send Message">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>

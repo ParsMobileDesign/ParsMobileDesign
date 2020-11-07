@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Employee>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container admin-container">
+    <div class="row bg-white rounded">
+        <div class="col-6"><h2>Employees...</h2></div>
+        <div class="col-6 text-right">
+            <partial name="_CreateButton" />
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-bordered table-hover  table-sm  custom-data-table">
+            <thead>
+                <tr class="table-secondary">
+                    <th scope="col">@Html.DisplayNameFor(m => m.Fname)</th>
+                    <th scope="col">@Html.DisplayNameFor(m => m.LName)</th>
+                    <th scope="col">@Html.DisplayNameFor(m => m.Email)</th>
+                    <th scope="col">@Html.DisplayNameFor(m => m.Tel)</th>
+                    <th scope="col">@Html.DisplayNameFor(m => m.Address)</th>
+                    <th scope="col">Edit/Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var employee in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(m => employee.Fname)</td>
+                        <td>@Html.DisplayFor(m => employee.LName)</td>
+                        <td>@Html.DisplayFor(m => employee.Email)</td>
+                        <td>@Html.DisplayFor(m => employee.Tel)</td>
+                        <td>@Html.DisplayFor(m => employee.Address)</td>
+                        <td><partial name="_TableEditDeleteButtons" model="employee.Id" /></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<PortfolioImage>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container admin-container">
+    <div class="row bg-white rounded">
+        <div class="col-6"><h2>Portfolio images...</h2></div>
+        <div class="col-6 text-right">
+            <partial name="_CreateButton" />
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-bordered table-hover  table-sm  custom-data-table">
+            <thead>
+                <tr class="table-secondary">
+                    <th scope="col">Portfolio Title</th>
+                    <th scope="col">Image Addr</th>
+                    <th scope="col">Edit/Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var img in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(m => img.Portfolio.Title)</td>
+                        <td>@Html.DisplayFor(m => img.ImageAddr)</td>
+                        <td><partial name="_TableEditDeleteButtons" model="img.Id" /></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

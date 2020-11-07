@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-ParsMobileDesign-13C44D38-FCD8-44CD-A80E-4733CB5F8B7C</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20201019095015_portfolioAndportfolioImage.cs" />
+    <Compile Remove="Data\Migrations\20201019095015_portfolioAndportfolioImage.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201019095211_portfolioAndportfolioImage.cs" />
+    <Compile Remove="Data\Migrations\20201019095211_portfolioAndportfolioImage.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201019113000_CompanyInfoAndEmployeeAndEmployeeSpecialities.cs" />
+    <Compile Remove="Data\Migrations\20201019113000_CompanyInfoAndEmployeeAndEmployeeSpecialities.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201019122125_initialMigration.cs" />
+    <Compile Remove="Data\Migrations\20201019122125_initialMigration.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201020112542_AddEmployeeExperince.cs" />
+    <Compile Remove="Data\Migrations\20201020112542_AddEmployeeExperince.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201022112121_changePrimaryKey.cs" />
+    <Compile Remove="Data\Migrations\20201022112121_changePrimaryKey.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201022180059_initialMig.cs" />
+    <Compile Remove="Data\Migrations\20201022180059_initialMig.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201101194749_addWebsiteAddrProfile.cs" />
+    <Compile Remove="Data\Migrations\20201101194749_addWebsiteAddrProfile.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201101222017_addMessageSchema.cs" />
+    <Compile Remove="Data\Migrations\20201101222017_addMessageSchema.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="wwwroot\images\PortfolioImages\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\boxicons\fonts\boxicons.svg" />
+    <None Include="wwwroot\css\boxicons\fonts\boxicons.woff2" />
+  </ItemGroup>
+
+</Project>

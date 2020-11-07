@@ -1,0 +1,52 @@
+﻿@model CompanyInfo
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container admin-container">
+    <div class="row">
+        <div class="col-12 box-info">
+            <h2>Edit Category</h2>
+            <form asp-action="Save">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <label asp-for="CorpTitle"></label>
+                            <input asp-for="CorpTitle" class="form-control" placeholder="Category Title">
+                            <span asp-validation-for="CorpTitle" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" class="form-control" type="email">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <label asp-for="Tel"></label>
+                            <input asp-for="Tel" class="form-control" type="tel">
+                            <span asp-validation-for="Tel" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6">
+                            <label asp-for="Address"></label>
+                            <textarea asp-for="Address" class="form-control" style="resize:none" rows="4"></textarea>
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-8 col-md-6">
+                            <label asp-for="Description"></label>
+                            <textarea asp-for="Description" class="form-control" style="resize:none" rows="4"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <input type="hidden" asp-for="Id" />
+            </form>
+        </div>
+    </div>
+</div>
+

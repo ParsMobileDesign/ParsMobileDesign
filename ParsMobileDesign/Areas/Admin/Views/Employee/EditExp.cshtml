@@ -1,0 +1,46 @@
+﻿@model EmployeeExperience
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container admin-container">
+    <div class="row">
+        <div class="col-12 box-info">
+            <h2>Edit Employee Experience</h2>
+            <form asp-action="SaveEmpExp">
+                <input type="hidden" asp-for="EmployeeId" />
+                <input type="hidden" asp-for="Id" />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <label asp-for="Period"></label>
+                            <input asp-for="Period" class="form-control">
+                            <span asp-validation-for="Period" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <label asp-for="Title"></label>
+                            <input asp-for="Title" class="form-control">
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <label asp-for="Location"></label>
+                            <input asp-for="Location" class="form-control">
+                            <span asp-validation-for="Location" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <label asp-for="Order"></label>
+                            <input asp-for="Order" class="form-control" type="number">
+                            <span asp-validation-for="Order" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a class="btn btn-info" asp-action="Edit" asp-route-Id="@Model.EmployeeId">Back</a>
+            </form>
+        </div>
+    </div>
+</div>
+

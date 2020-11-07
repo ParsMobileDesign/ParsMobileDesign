@@ -1,0 +1,31 @@
+﻿@model PortfolioAndImages
+@using ParsMobileDesign.Extensions
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container admin-container">
+    <div class="row">
+        <div class="col-12 box-info">
+            <h2>Edit Portfolio Image</h2>
+            <form asp-action="SavePortfolioImage" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <label asp-for="PortfolioImage.PortfolioId"></label>
+                        <select id="edCategory" asp-for="PortfolioImage.PortfolioId" asp-items="Model.PortfolioItems.GetSelectListItems(Model.PortfolioImage.PortfolioId)" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label asp-for="PortfolioImage.ImageAddr"></label>
+                        <input type="file" name="files" multiple class="form-control" />
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <input type="hidden" asp-for="PortfolioImage.Id" />
+            </form>
+        </div>
+    </div>
+</div>
+

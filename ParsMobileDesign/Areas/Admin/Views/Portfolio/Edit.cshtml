@@ -1,0 +1,51 @@
+﻿@model Portfolio
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container admin-container">
+    <div class="row">
+        <div class="col-12 box-info">
+            <h2>Edit Portfolio</h2>
+            <form asp-action="Save" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <label asp-for="Title"></label>
+                            <input asp-for="Title" class="form-control">
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <label asp-for="Type"></label>
+                            <input asp-for="Type" class="form-control">
+                            <span asp-validation-for="Type" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <label asp-for="WebsiteAddr"></label>
+                            <input asp-for="WebsiteAddr" class="form-control">
+                            <span asp-validation-for="WebsiteAddr" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6">
+                            <label asp-for="Description"></label>
+                            <textarea asp-for="Description" class="form-control" style="resize:none" rows="4"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <input type="hidden" asp-for="PortfolioId" />
+            </form>
+        </div>
+    </div>
+</div>
+

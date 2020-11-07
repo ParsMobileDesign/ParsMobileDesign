@@ -1,0 +1,165 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container admin-container">
+    <div class="row">
+        <div class="col-12 box-info">
+            <h2>Edit Employee</h2>
+            <form asp-action="Save" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <label asp-for="Fname"></label>
+                            <input asp-for="Fname" class="form-control">
+                            <span asp-validation-for="Fname" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <label asp-for="LName"></label>
+                            <input asp-for="LName" class="form-control">
+                            <span asp-validation-for="LName" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" class="form-control" type="email">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <label asp-for="Tel"></label>
+                            <input asp-for="Tel" class="form-control" type="tel">
+                            <span asp-validation-for="Tel" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-4 d-flex justify-content-center">
+                    @{
+                        var base64 = Convert.ToBase64String(Model.Picture);
+                        var imgsrc = string.Format("data:image/jpeg;base64,{0}", base64);
+                    }
+                    <img alt="Category Image" src="@imgsrc" style="max-width:200px" />
+                </div>
+                <div class="form-group">
+                    <div class="custom-file">
+                        <input type="file" id="files" class="custom-file-input" asp-for="Picture">
+                        <label class="custom-file-label" asp-for="Picture">Choose file...</label>
+                        <div class="invalid-feedback">Example invalid custom file feedback</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6">
+                            <label asp-for="Address"></label>
+                            <textarea asp-for="Address" class="form-control" style="resize:none" rows="4"></textarea>
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-8 col-md-6">
+                            <label asp-for="Description"></label>
+                            <textarea asp-for="Description" class="form-control" style="resize:none" rows="4"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <input type="hidden" asp-for="Id" />
+            </form>
+        </div>
+    </div>
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                        Specialty
+                    </button>
+
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="form-group form-row">
+                        @if (Model.Id > 0)
+                        {
+                            <div class="col-3">
+                                <a id="btnAddSpec" class="new-btn float-right" asp-action="CreateSpecialty" asp-route-id="@Model.Id"><i class='bx bx-message-square-add'></i></a>
+                            </div>
+                        }
+                    </div>
+                    <div class="row" id="SpecList">
+                        <table class="table table-striped table-bordered table-sm">
+                            <thead>
+                                <tr class="table-secondary">
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Domain</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.Specialities != null)
+                                {
+                                    @foreach (var spec in Model.Specialities)
+                                    {
+                                        <tr class="table-secondary">
+                                            <td scope="col">@spec.Title</td>
+                                            <td scope="col">@spec.Domain</td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                        Experience
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="form-group form-row">
+                        @if (Model.Id > 0)
+                        {
+                            <div class="col-2">
+                                <a class="new-btn float-right" asp-action="CreateExperience" asp-route-id="@Model.Id"><i class='bx bx-message-square-add'></i></a>
+                            </div>
+                        }
+                    </div>
+                    <div class="row" id="ExpList">
+                        <table class="table table-striped table-bordered table-sm">
+                            <thead>
+                                <tr class="table-secondary">
+                                    <th scope="col">Period</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Location</th>
+                                    <th scope="col">Order</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.Specialities != null)
+                                {
+                                    @foreach (var exp in Model.Experiences)
+                                    {
+                                        <tr class="table-secondary">
+                                            <td scope="col">@exp.Period</td>
+                                            <td scope="col">@exp.Title</td>
+                                            <td scope="col">@exp.Location</td>
+                                            <td scope="col">@exp.Order</td>
+                                        </tr>
+                                    }
+                                }
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

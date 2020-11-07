@@ -1,0 +1,9 @@
+﻿@model int
+    <div class="btn-group" role="group">
+        <a asp-action="Edit" asp-route-Id="@Model">
+            <i class='bx bx-edit bx-lg table-btn'></i>
+        </a>
+        <a asp-action="Delete" asp-route-Id="@Model">
+            <i class='bx bx-trash bx-lg table-btn'></i>
+        </a>
+    </div>

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ParsMobileDesign</title>
+    <link rel="stylesheet" href="~/css/animate/animate.css">
+    <link rel="stylesheet" href="~/css/icomoon/icomoon.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/flexslider/flexslider.css">
+    <!-- Modernizr JS -->
+    <script src="~/js/modernizr-2.6.2.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+    <link href="~/css/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/css/fontAwesome/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+</head>
+<body>
+
+    <div id="mainPage">
+        <a href="#" class="js-sideMenu-nav-toggle sideMenu-nav-toggle"><i></i></a>
+        <aside id="sideMenu" role="complementary" class="border js-fullheight">
+            <div style="display:flex;justify-content:center;margin-bottom:20px">
+                <img class="sideMenu-logo-img" src="~/CorpImage/Logo_Complete.png" />
+            </div>
+            <h1 id="sideMenu-logo"><a asp-area="Customer" asp-controller="Home" asp-action="Index">Pars Mobile Design</a></h1>
+            <nav id="sideMenu-main-menu" role="navigation">
+                <ul>
+                    <li><a asp-area="Customer" asp-controller="Home" asp-action="Index">Home page</a></li>
+                    <li><a asp-area="Admin" asp-controller="Portfolio" asp-action="Index">Portfolio</a></li>
+                    <li><a asp-area="Admin" asp-controller="PortfolioImage" asp-action="Index">Portfolio Images</a></li>
+                    <li><a asp-area="Admin" asp-controller="Company" asp-action="Index">Corporation Info</a></li>
+                    <li><a asp-area="Admin" asp-controller="Employee" asp-action="Index">Employee</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <div id="main-container">
+            @RenderBody()
+        </div>
+        @*<main role="main" class="pb-3">
+            </main>*@
+    </div>
+
+    @*<footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2020 - ParsMobileDesign - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/jquery.easing.1.3.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/jquery.waypoints.min.js"></script>
+    <script src="~/js/jquery.flexslider-min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
